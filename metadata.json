@@ -1,7 +1,7 @@
 {
   "name": "USD Coin",
   "symbol": "USDC",
-  "uri": "https://ipfs.io/ipfs/QmUZ7GcwR3zD57VUfWsp4SF4dRdXZpXNvX6dnB1ePLkFb6?filename=TrueStable.jpeg",
+  "uri": "https://raw.githubusercontent.com/sodexx7/TrueStable/main/TrueStable.jpeg",
   "seller_fee_basis_points": 0,
   "creators": null
 }
