@@ -12,7 +12,7 @@ anchor_price_oracle = "EUeWpzuAwmY13VNbVumpTJVZwmoUkrf1cujqKVGr7rRE"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "devnet"
+cluster = "https://devnet.helius-rpc.com/?api-key=7ad72601-5330-4af0-b238-175e3ed057d1"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
