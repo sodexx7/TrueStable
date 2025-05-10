@@ -20,7 +20,7 @@ The operational mechanism of TrueStable Finance is designed to ensure fairness a
 
 **User Transactions**: Users can supply their ORE tokens to the platform. Based on a pre - determined collaboration ratio, they will receive the corresponding amount of USDC. This allows users to access liquidity without selling their valuable ORE tokens.
 
-**Token Staking and Generation**: TrueStable Finance stakes the users' supplied ORE tokens to the ORE protocol. Through this staking process, additional ORE tokens are generated. These newly minted tokens serve as a source of income, which is distributed among the investors and TrueStable Finance, creating a sustainable revenue stream for all parties.
+**Token Staking and Rewards**: TrueStable Finance stakes the users' supplied ORE tokens to the ORE protocol. These reward tokens serve as a source of income, which is distributed among the investors and TrueStable Finance, creating a sustainable revenue stream for all parties.
 
 ## Participants
 
