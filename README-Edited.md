@@ -4,7 +4,7 @@
 
 In the current cryptocurrency market, numerous protocol tokens face challenges in facilitating effective collaboration. Simultaneously, token holders often seek ways to optimize their capital efficiency without resorting to selling their tokens. Additionally, protocol developers and long - term supporters aim to maximize their profits. TrueStable Finance emerges as a reliable solution to address these complex issues.
 
-For token holders, TrueStable Finance offers a unique opportunity to obtain stablecoins without divesting their tokens while enjoying the significant benefit of zero borrowing rates. This enables them to unlock the value of their tokens without losing their stake in the underlying protocol. For investors, our platform provides a more lucrative alternative compared to direct token purchases, allowing them to acquire more tokens through innovative mechanisms. For protocols, partnering with TrueStable Finance means enhancing their ecosystem by attracting more users and capital, thereby promoting long - term growth and sustainability.
+For users, TrueStable Finance offers a unique opportunity to obtain stablecoins without divesting their tokens while enjoying the significant benefit of zero borrowing rates. This enables them to unlock the value of their tokens without losing their stake in the underlying protocol. For investors, our platform provides a more lucrative alternative compared to direct token purchases, allowing them to acquire more tokens through innovative mechanisms. For protocols, partnering with TrueStable Finance means enhancing their ecosystem by attracting more users and capital, thereby promoting long - term growth and sustainability.
 
 ## Goal
 
@@ -16,7 +16,7 @@ The operational mechanism of TrueStable Finance is designed to ensure fairness a
 
 ![Diagram](diagram.png)
 
-**Investor Incentives**: Investors who supply stablecoins, such as USDC, have the opportunity to acquire more ORE tokens. They can do this either by directly purchasing ORE or by staking ORE, leveraging our proprietary token accumulation mechanism to increase their holdings over time.
+**Investor Incentives**: Investors who supply stablecoins, such as USDC, have the opportunity to acquire more ORE tokens. They can do this either by directly purchasing ORE or by staking ORE, one the contrary, leveraging our token accumulation mechanism to increase their holdings over time.
 
 **User Transactions**: Users can supply their ORE tokens to the platform. Based on a pre - determined collaboration ratio, they will receive the corresponding amount of USDC. This allows users to access liquidity without selling their valuable ORE tokens.
 
