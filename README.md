@@ -21,7 +21,7 @@ Users can get stable coins with zero borrow rates by supplying their token(curre
 ![Diagram](diagram.png)
 
 0. Investors who supply stableCoins can gain more protocol tokens (current support ORE) by directly buying or staking ORE that have accumulated more with our current mechanism.
-1. The user supplies their tokens(current support OPER) and gets the expected stable coins (current support USDC) according to the collaboration ratio.
+1. The user supplies their tokens(current support ORE) and gets the expected stable coins (current support USDC) according to the collaboration ratio.
 2. TrueStable stakes users' tokens to the protocols(Current support ORE), which will generate more tokes(currently is ORE). Which is the income for
 3. The more generated tokens as the income for the investors and TrueStable
 
