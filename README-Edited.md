@@ -14,6 +14,8 @@ The primary objective of TrueStable Finance is to enable users to borrow stablec
 
 The operational mechanism of TrueStable Finance is designed to ensure fairness and efficiency for all participants.
 
+![Diagram](diagram.png)
+
 **Investor Incentives**: Investors who supply stablecoins, such as USDC, have the opportunity to acquire more ORE tokens. They can do this either by directly purchasing ORE or by staking ORE, leveraging our proprietary token accumulation mechanism to increase their holdings over time.
 
 **User Transactions**: Users can supply their ORE tokens to the platform. Based on a pre - determined collaboration ratio, they will receive the corresponding amount of USDC. This allows users to access liquidity without selling their valuable ORE tokens.
@@ -21,8 +23,6 @@ The operational mechanism of TrueStable Finance is designed to ensure fairness a
 **Token Staking and Generation**: TrueStable Finance stakes the users' supplied ORE tokens to the ORE protocol. Through this staking process, additional ORE tokens are generated. These newly minted tokens serve as a source of income, which is distributed among the investors and TrueStable Finance, creating a sustainable revenue stream for all parties.
 
 ## Participants
-
-![Diagram](diagram.png)
 
 ### 1. Users
 
