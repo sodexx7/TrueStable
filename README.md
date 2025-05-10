@@ -2,63 +2,52 @@
 
 ## Background
 
-In the current market, some protocol coins can't be taken as collaboration, and some holders want to maximize their capital efficiency without selling the tokens.
-Also, the protocols themself or the people who long on this protocol and want to maximize their profit.
-We, trustable Finance, supply the solution to solving this problem.
+In the current cryptocurrency market, numerous protocol tokens face challenges in facilitating effective collaboration. Simultaneously, token holders often seek ways to optimize their capital efficiency without resorting to selling their tokens. Additionally, protocol developers and long - term supporters aim to maximize their profits. TrueStable Finance emerges as a reliable solution to address these complex issues.
 
-For user: getting the stableCoin without selling their token while enjoying the zero borrow rate.
+For users, TrueStable Finance offers a unique opportunity to obtain stablecoins without divesting their tokens while enjoying the significant benefit of zero borrowing rates. This enables them to unlock the value of their tokens without losing their stake in the underlying protocol. For investors, our platform provides a more lucrative alternative compared to direct token purchases, allowing them to acquire more tokens through innovative mechanisms. For protocols, partnering with TrueStable Finance means enhancing their ecosystem by attracting more users and capital, thereby promoting long - term growth and sustainability.
 
-For investors: get more tokens comparing directly buying them.
+## Goal
 
-For protocol: enhance their ecosystem.
+The primary objective of TrueStable Finance is to enable users to borrow stablecoins at zero interest rates by staking their tokens. Currently, users can stake their ORE tokens to obtain stablecoins, specifically USDC, with no borrowing costs, creating a win - win situation for all parties involved.
 
-## Goal: Borrow stable Coins with zero borrow rates by staking your token
+## Mechanism
 
-Users can get stable coins with zero borrow rates by supplying their token(current support ORE)
-
-## Mechniasm
+The operational mechanism of TrueStable Finance is designed to ensure fairness and efficiency for all participants.
 
 ![Diagram](diagram.png)
 
-0. Investors who supply stableCoins can gain more protocol tokens (current support ORE) by directly buying or staking ORE that have accumulated more with our current mechanism.
-1. The user supplies their tokens(current support ORE) and gets the expected stable coins (current support USDC) according to the collaboration ratio.
-2. TrueStable stakes users' tokens to the protocols(Current support ORE), which will generate more tokes(currently is ORE). Which is the income for
-3. The more generated tokens as the income for the investors and TrueStable
+**Investor Incentives**: Investors who supply stablecoins, such as USDC, have the opportunity to acquire more ORE tokens. They can do this either by directly purchasing ORE or by staking ORE, one the contrary, leveraging our token accumulation mechanism to increase their holdings over time.
+
+**User Transactions**: Users can supply their ORE tokens to the platform. Based on a pre - determined collaboration ratio, they will receive the corresponding amount of USDC. This allows users to access liquidity without selling their valuable ORE tokens.
+
+**Token Staking and Rewards**: TrueStable Finance stakes the users' supplied ORE tokens to the ORE protocol. These reward tokens serve as a source of income, which is distributed among the investors and TrueStable Finance, creating a sustainable revenue stream for all parties.
 
 ## Participants
 
-### 1.Users
+### 1. Users
 
-    Deposit ORE get expected USDC
-    Redeem the corrospending's ORE by return the ORE token
+**Deposit**: Users deposit their ORE tokens into the platform and receive the expected amount of USDC, providing them with immediate liquidity.
 
-### 2.Investors
+**Redeem**: When users wish to retrieve their ORE tokens, they can return the equivalent amount of USDC to the platform, effectively reversing the initial transaction.
 
-    Supply USDC, Get more ORE.
+### 2. Investors
 
-### 3.Protocols
+Investors supply USDC to the platform and, in return, are rewarded with additional ORE tokens. This provides them with an attractive investment opportunity to grow their token portfolio.
 
-    Enhance the protocol's ecosystem
+### 3. Protocols
+
+By integrating with TrueStable Finance, protocols can enhance their ecosystem. The increased participation of users and investors through our platform leads to greater liquidity, improved token utility, and overall ecosystem growth.
 
 ## Features
 
-1. stake
+**Staking**: Users can stake their ORE tokens and instantly receive the desired amount of USDC. This staking feature allows users to unlock the value of their tokens while maintaining their long - term investment.
 
-The user stake then gets the expected amount of USDC.
+**Redeeming**: The redeeming process is straightforward. Users can return the USDC they borrowed and retrieve their ORE tokens, ensuring flexibility and control over their assets.
 
-2. redeem
+**Liquidation**: To safeguard the integrity of the platform and ensure the health of each user's collateral ratio, a liquidation mechanism is in place. In the event that a user's collateral falls below a certain threshold, a liquidation process is triggered. The liquidation caller is incentivized with an evaluation bonus, ensuring that the platform remains stable and secure.
 
-Users redeem ORE tokens by returning the USDC.
+**Supply/Claim**: Protocol shareholders or users who believe in the potential of ORE can supply USDC to the platform. In return, they have the opportunity to claim more ORE tokens, aligning their interests with the growth of the ORE ecosystem.
 
-3. liquidation
+## Specification Design
 
-Guarantee the health collateral ratio for each user's collaboration.
-The liquidation caller will get the evaluation bonus.
-
-4. Supply/Claim
-
-The protocol's shareholder or the user thinks ORE has great potential to supply the USDC and get more ORE.
-
-## Specification desgin
-
-    todo
+The specification design of TrueStable Finance is currently in progress. In the upcoming phases, we will focus on developing detailed technical specifications, risk management frameworks, and user - friendly interfaces to ensure the seamless operation of our platform. This will include aspects such as security protocols, smart contract optimization, and real - time monitoring of user transactions to provide a reliable and efficient service for all users.
