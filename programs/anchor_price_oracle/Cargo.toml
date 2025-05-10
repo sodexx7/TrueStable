@@ -1,0 +1,17 @@
+[package]
+name = "anchor_price_oracle"
+version = "0.1.0"
+edition = "2021" # 或者 "2018" 如果你使用旧版本 Rust
+license = "Apache-2.0" # 或者你选择的许可证
+
+#highlight-start
+[dependencies]
+anchor-lang = "0.31.1" # 或者您的 Anchor 版本
+#highlight-end
+
+[lib]
+name = "anchor_price_oracle"
+crate-type = ["cdylib", "lib"]
+
+[features]
+idl-build = ["anchor-lang/idl-build"]
