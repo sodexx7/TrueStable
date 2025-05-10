@@ -22,6 +22,8 @@ The operational mechanism of TrueStable Finance is designed to ensure fairness a
 
 ## Participants
 
+![Diagram](diagram.png)
+
 ### 1. Users
 
 **Deposit**: Users deposit their ORE tokens into the platform and receive the expected amount of USDC, providing them with immediate liquidity.
