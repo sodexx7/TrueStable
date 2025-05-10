@@ -5,8 +5,11 @@
 In the current market, some protocol coins can't be taken as collaboration, and some holders want to maximize their capital efficiency without selling the tokens.
 Also, the protocols themself or the people who long on this protocol and want to maximize their profit.
 We, trustable Finance, supply the solution to solving this problem.
+
 For user: getting the stableCoin without selling their token while enjoying the zero borrow rate.
+
 For investors: get more tokens comparing directly buying them.
+
 For protocol: enhance their ecosystem.
 
 ## Goal: Borrow stable Coins with zero borrow rates by staking your token
