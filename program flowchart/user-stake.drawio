@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="27.0.3">
+  <diagram name="第 1 页" id="F9QfNPKws5Z9E7l-O0tv">
+    <mxGraphModel dx="1213" dy="730" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="P88Dps1FK8DmfdaHWinE-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-6" target="P88Dps1FK8DmfdaHWinE-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-6" value="start" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="294" y="70" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-9" target="P88Dps1FK8DmfdaHWinE-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-25" value="Y" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="P88Dps1FK8DmfdaHWinE-19">
+          <mxGeometry x="0.0265" y="1" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-9" target="P88Dps1FK8DmfdaHWinE-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-27" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="P88Dps1FK8DmfdaHWinE-21">
+          <mxGeometry x="0.0053" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-9" value="log in(wallet)" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="279.5" y="220" width="149" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-18" target="P88Dps1FK8DmfdaHWinE-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="354" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-18" value="stake and borrow" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="294" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-20" target="P88Dps1FK8DmfdaHWinE-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-20" value="create wallet and retry again" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-31" target="P88Dps1FK8DmfdaHWinE-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-34" value="Y" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="P88Dps1FK8DmfdaHWinE-33">
+          <mxGeometry y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-31" target="P88Dps1FK8DmfdaHWinE-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-40" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="P88Dps1FK8DmfdaHWinE-38">
+          <mxGeometry x="-0.0159" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-31" value="stake ore&lt;div&gt;borrow usdc&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="279.5" y="530" width="149" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-32" target="P88Dps1FK8DmfdaHWinE-43">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="354" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-32" value="stake success" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="294" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="P88Dps1FK8DmfdaHWinE-37" target="P88Dps1FK8DmfdaHWinE-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-37" value="ore is not enough" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="65" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P88Dps1FK8DmfdaHWinE-43" value="end" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="294" y="850" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
