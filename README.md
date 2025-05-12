@@ -48,6 +48,10 @@ By integrating with TrueStable Finance, protocols can enhance their ecosystem. T
 
 **Supply/Claim**: Protocol shareholders or users who believe in the potential of ORE can supply USDC to the platform. In return, they have the opportunity to claim more ORE tokens, aligning their interests with the growth of the ORE ecosystem.
 
-## Specification Design
+## RoadMap
 
-The specification design of TrueStable Finance is currently in progress. In the upcoming phases, we will focus on developing detailed technical specifications, risk management frameworks, and user - friendly interfaces to ensure the seamless operation of our platform. This will include aspects such as security protocols, smart contract optimization, and real - time monitoring of user transactions to provide a reliable and efficient service for all users.
+1.Complete the implementation of all features, including investor-related operations.
+
+2.Strengthen risk management to handle extreme market conditions and safeguard the interests of all participants.
+
+3.Enhance the security of the smart contracts and improve the overall user experience.
