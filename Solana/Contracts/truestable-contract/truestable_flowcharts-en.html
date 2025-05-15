@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueStable Function Flowchart</title>
+    <!-- 引入 Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --bg-color: #f5f7fa;
+            --text-color: #333;
+            --border-color: #ddd;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-color);
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2, h3 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .function-description {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .diagram-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .key-points {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        .key-points h4 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+
+        .key-points ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .key-points li {
+            margin: 8px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .key-points li::before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            background: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TrueStable Function Flowchart</h1>
+        <p>A detailed flowchart of a zero-interest lending protocol using ORE tokens as collateral to borrow USDC on Solana</p>
+    </header>
+
+    <div class="section" id="overview">
+        <h2>Protocol Function Overview</h2>
+        <div class="function-description">
+            <p>TrueStable is a zero-interest lending protocol running on the Solana blockchain, allowing users to borrow USDC stablecoins using ORE tokens as collateral. The following flowchart illustrates the execution logic and decision processes of each major function.</p>
+        </div>
+        <div class="key-points">
+            <h4>Key Protocol Accounts</h4>
+            <ul>
+                <li><strong>Lending Pool Account (PDA)</strong>: Stores the global configuration of the protocol, including token minting permissions, treasury address, LTV ratio, and liquidation threshold</li>
+                <li><strong>User Position Account (PDA)</strong>: Records the amount of collateral and loan for each user, with a separate account for each user</li>
+                <li><strong>ORE Treasury Account</strong>: Controlled by the Lending Pool PDA, used to store ORE token collateral deposited by users</li>
+                <li><strong>USDC Treasury Account</strong>: Controlled by the Lending Pool PDA, used to manage the protocol's USDC token flow</li>
+                <li><strong>User ORE Account</strong>: The user's personal ORE token account, used for depositing and withdrawing collateral</li>
+                <li><strong>User USDC Account</strong>: The user's personal USDC token account, used for receiving loans and making repayments</li>
+            </ul>
+        </div>
+        <div class="key-points">
+            <h4>Protocol Parameters and Limits</h4>
+            <ul>
+                <li><strong>LTV Ratio:</strong> 75% - The loan amount cannot exceed 75% of the collateral value</li>
+                <li><strong>Liquidation Threshold:</strong> 80% - Positions can be liquidated when the loan amount exceeds 80% of the collateral value</li>
+                <li><strong>Liquidation Reward:</strong> 5% - Liquidators receive an additional reward of 5% of the liquidation amount</li>
+            </ul>
+        </div>
+        <div class="diagram-container">
+            <div class="mermaid">
+                graph TD
+                    subgraph "Core Protocol Functions"
+                        A[Initialize Lending Pool] --> B[Deposit Collateral]
+                        B --> C[Borrow USDC]
+                        C --> D[Repay USDC]
+                        D --> E[Withdraw Collateral]
+                        B --> E
+                        C --> F{Check Position Health}
+                        F -->|Unhealthy| G[Liquidate Position]
+                        G --> B
+                    end
+
+                    style A fill:#bbf,stroke:#333,stroke-width:2px
+                    style B fill:#bbf,stroke:#333,stroke-width:2px
+                    style C fill:#bbf,stroke:#333,stroke-width:2px
+                    style D fill:#bbf,stroke:#333,stroke-width:2px
+                    style E fill:#bbf,stroke:#333,stroke-width:2px
+                    style G fill:#bbf,stroke:#333,stroke-width:2px
+                    style F fill:#f96,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="init">
+        <h2>Initialize Lending Pool (initialize_lending_pool)</h2>
+        <div class="function-description">
+            <p>This function creates the lending pool and sets the basic parameters of the protocol, including the token minter address, treasury address, LTV ratio, and liquidation threshold. This is the first step that must be executed before using the protocol.</p>
+        </div>
+        <div class="diagram-container">
+            <div class="mermaid">
+                flowchart TD
+                    A([Start]) --> B[Receive Initialization Parameters:<br>ORE Minter, USDC Minter, Treasury Address]
+                    B --> C{Check if Lending Pool<br>Already Exists?}
+                    C -->|Yes| D[Return Error:<br>Lending Pool Already Exists]
+                    C -->|No| E[Create Lending Pool PDA]
+                    E --> F[Set Lending Pool Parameters:<br>ore_mint, usdc_mint, treasury]
+                    F --> G[Set LTV Ratio = 75%<br>Set Liquidation Threshold = 80%]
+                    G --> H[Save Lending Pool State]
+                    H --> I([Complete])
+
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style D fill:#f99,stroke:#333,stroke-width:2px
+                    style I fill:#9f9,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+        <div class="key-points">
+            <h4>Key Points of Initializing Lending Pool</h4>
+            <ul>
+                <li>The lending pool is the core account of the entire protocol, storing all basic configurations</li>
+                <li>Use a fixed seed "lending_pool" to create a PDA account, ensuring global uniqueness</li>
+                <li>Set the default LTV ratio to 75%, determining the maximum borrowing capacity of users</li>
+                <li>Set the default liquidation threshold to 80%, above which positions can be liquidated</li>
+                <li>Can only be initialized once, after which the same PDA address is used to access the lending pool</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="deposit">
+        <h2>Deposit Collateral (deposit_collateral)</h2>
+        <div class="function-description">
+            <p>Users call this function to deposit ORE tokens as collateral into the protocol's treasury. If the user does not have a position before, a new user position account will be created to track their collateral and loans.</p>
+        </div>
+        <div class="diagram-container">
+            <div class="mermaid">
+                flowchart TD
+                    A([Start]) --> B[Receive Deposit Parameters:<br>User Address, Collateral Amount]
+                    B --> C{Check if User Position<br>Exists?}
+                    C -->|No| D[Create User Position PDA]
+                    C -->|Yes| E[Get Current<br>User Position State]
+                    D --> E
+                    E --> F{Is User ORE Balance<br>Sufficient?}
+                    F -->|No| G[Return Error:<br>Insufficient Balance]
+                    F -->|Yes| H[Transfer Tokens from User ORE Account<br>to ORE Treasury]
+                    H --> I[Update User Position:<br>Increase Collateral Amount]
+                    I --> J([Complete])
+
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style G fill:#f99,stroke:#333,stroke-width:2px
+                    style J fill:#9f9,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+        <div class="key-points">
+            <h4>Key Points of Depositing Collateral</h4>
+            <ul>
+                <li>Users must have enough ORE tokens to deposit</li>
+                <li>If depositing for the first time, the program will automatically create a user position account</li>
+                <li>The deposited tokens are actually transferred to the ORE treasury controlled by the lending pool PDA</li>
+                <li>The user position record will be updated to reflect the new total collateral</li>
+                <li>Depositing collateral is a prerequisite for other operations (such as borrowing)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="borrow">
+        <h2>Borrow USDC (borrow_usdc)</h2>
+        <div class="function-description">
+            <p>This function allows users to borrow USDC based on the value of their collateral. The system calculates the maximum borrowable amount according to the LTV ratio, ensuring users cannot over-borrow.</p>
+        </div>
+        <div class="diagram-container">
+            <div class="mermaid">
+                flowchart TD
+                    A([Start]) --> B[Receive Borrow Parameters:<br>User Address, Borrow Amount]
+                    B --> C{Check if User Position<br>Exists?}
+                    C -->|No| D[Return Error:<br>No Collateral]
+                    C -->|Yes| E[Get User Position<br>Collateral Amount]
+                    E --> F[Get Lending Pool<br>LTV Ratio]
+                    F --> G[Calculate Maximum Borrowable Amount:<br>max_borrow = Collateral * LTV Ratio / 100]
+                    G --> H{Requested Borrow Amount<br>≤ Maximum Borrowable Amount?}
+                    H -->|No| I[Return Error:<br>Borrow Amount Too Large]
+                    H -->|Yes| J[Transfer USDC from Treasury<br>to User USDC Account]
+                    J --> K[Update User Position:<br>Increase Borrow Amount]
+                    K --> L([Complete])
+
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style D fill:#f99,stroke:#333,stroke-width:2px
+                    style I fill:#f99,stroke:#333,stroke-width:2px
+                    style L fill:#9f9,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+        <div class="key-points">
+            <h4>Key Points of Borrowing USDC</h4>
+            <ul>
+                <li>Users must deposit collateral before borrowing</li>
+                <li>Maximum borrowable amount = Collateral Value × LTV Ratio (75%)</li>
+                <li>Cannot borrow more than the maximum borrowable amount calculated based on collateral</li>
+                <li>Borrowed amount is transferred from the treasury to the user's USDC account</li>
+                <li>Borrowing increases the borrow amount in the user's position</li>
+                <li>Increasing the borrow amount reduces the health of the position</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="repay">
+        <h2>Repay USDC (repay_usdc)</h2>
+        <div class="function-description">
+            <p>Users use this function to repay previously borrowed USDC. Repayment increases the health of the position and eventually allows users to withdraw collateral.</p>
+        </div>
+        <div class="diagram-container">
+            <div class="mermaid">
+                flowchart TD
+                    A([Start]) --> B[Receive Repayment Parameters:<br>User Address, Repayment Amount]
+                    B --> C{Check if User Position<br>Exists?}
+                    C -->|No| D[Return Error:<br>No Loan Record]
+                    C -->|Yes| E[Get User Position<br>Borrow Amount]
+                    E --> F{Repayment Amount<br>≤ Current Borrow Amount?}
+                    F -->|No| G[Return Error:<br>Repayment Amount Too Large]
+                    F -->|Yes| H{Is User USDC Balance<br>Sufficient?}
+                    H -->|No| I[Return Error:<br>Insufficient USDC Balance]
+                    H -->|Yes| J[Transfer Tokens from User USDC Account<br>to Treasury]
+                    J --> K[Update User Position:<br>Decrease Borrow Amount]
+                    K --> L{Borrow Amount<br>Becomes Zero?}
+                    L -->|Yes| M[Mark User Position<br>as Fully Repaid]
+                    L -->|No| N[Maintain Position<br>Partial Loan Status]
+                    M --> O([Complete])
+                    N --> O
+
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style D fill:#f99,stroke:#333,stroke-width:2px
+                    style G fill:#f99,stroke:#333,stroke-width:2px
+                    style I fill:#f99,stroke:#333,stroke-width:2px
+                    style O fill:#9f9,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+        <div class="key-points">
+            <h4>Key Points of Repaying USDC</h4>
+            <ul>
+                <li>Users must have enough USDC to repay</li>
+                <li>Repayment amount cannot exceed the current borrow amount</li>
+                <li>Repayment reduces the borrow amount recorded in the user's position</li>
+                <li>USDC tokens are transferred back to the protocol's treasury from the user's account</li>
+                <li>Repayment increases the health of the position</li>
+                <li>Once fully repaid, users can withdraw all collateral</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="withdraw">
+        <h2>Withdraw Collateral (withdraw_collateral)</h2>
+        <div class="function-description">
+            <p>Allows users to withdraw previously deposited ORE collateral while maintaining sufficient collateral ratio. This is typically used after repayment or when there is no loan.</p>
+        </div>
+        <div class="diagram-container">
+            <div class="mermaid">
+                flowchart TD
+                    A([Start]) --> B[Receive Withdrawal Parameters:<br>User Address, Withdrawal Amount]
+                    B --> C{Check if User Position<br>Exists?}
+                    C -->|No| D[Return Error:<br>No Collateral]
+                    C -->|Yes| E[Get User Position<br>Collateral and Borrow Amount]
+                    E --> F{Withdrawal Amount<br>≤ Current Collateral?}
+                    F -->|No| G[Return Error:<br>Withdrawal Amount Too Large]
+                    F -->|Yes| H[Calculate Remaining Collateral:<br>remaining = Current Collateral - Withdrawal Amount]
+                    H --> I[Get Lending Pool<br>LTV Ratio]
+                    I --> J[Calculate Minimum Required Collateral:<br>min_required = Borrow Amount * 100 / LTV Ratio]
+                    J --> K{Remaining Collateral<br>≥ Minimum Required Collateral?}
+                    K -->|No| L[Return Error:<br>Insufficient Collateral After Withdrawal]
+                    K -->|Yes| M[Transfer Tokens from ORE Treasury<br>to User ORE Account]
+                    M --> N[Update User Position:<br>Decrease Collateral Amount]
+                    N --> O([Complete])
+
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style D fill:#f99,stroke:#333,stroke-width:2px
+                    style G fill:#f99,stroke:#333,stroke-width:2px
+                    style L fill:#f99,stroke:#333,stroke-width:2px
+                    style O fill:#9f9,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+        <div class="key-points">
+            <h4>Key Points of Withdrawing Collateral</h4>
+            <ul>
+                <li>The amount of collateral users can withdraw is limited by the current loan</li>
+                <li>Must maintain sufficient collateral ratio to cover the current loan after withdrawal</li>
+                <li>If there is no loan, all collateral can be withdrawn</li>
+                <li>Withdrawal operation requires the signature authorization of the lending pool PDA</li>
+                <li>ORE tokens are transferred back to the user's ORE account from the treasury</li>
+                <li>Withdrawing collateral reduces the available borrowing limit</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="liquidate">
+        <h2>Liquidate Position (liquidate_position)</h2>
+        <div class="function-description">
+            <p>When a user's position is unhealthy (the loan amount to collateral ratio exceeds the liquidation threshold), liquidators can acquire collateral by paying part of the debt. This is a key mechanism to ensure the stability of the protocol.</p>
+        </div>
+        <div class="diagram-container">
+            <div class="mermaid">
+                flowchart TD
+                    A([Start]) --> B[Receive Liquidation Parameters:<br>Liquidator Address, Liquidated User Address, Liquidation Amount]
+                    B --> C{Check if Liquidated User<br>Position Exists?}
+                    C -->|No| D[Return Error:<br>Position Does Not Exist]
+                    C -->|Yes| E[Get User Position<br>Collateral and Borrow Amount]
+                    E --> F[Get Lending Pool<br>Liquidation Threshold]
+                    F --> G[Calculate User's Current Collateral Ratio:<br>ratio = Borrow Amount * 100 / Collateral Amount]
+                    G --> H{Collateral Ratio > Liquidation Threshold?}
+                    H -->|No| I[Return Error:<br>Position Not Liquidatable]
+                    H -->|Yes| J{Liquidation Amount<br>≤ User Borrow Amount?}
+                    J -->|No| K[Return Error:<br>Liquidation Amount Too Large]
+                    J -->|Yes| L{Is Liquidator USDC Balance<br>Sufficient?}
+                    L -->|No| M[Return Error:<br>Insufficient USDC Balance]
+                    L -->|Yes| N[Calculate Liquidation Reward:<br>bonus = Liquidation Amount * 0.05]
+                    N --> O[Calculate Total Collateral Acquisition:<br>total = Liquidation Amount + bonus]
+                    O --> P{User Collateral<br>≥ Total Collateral Acquisition?}
+                    P -->|No| Q[Adjust Liquidation Amount<br>to Fit Available Collateral]
+                    P -->|Yes| R[Transfer USDC from Liquidator Account<br>to Treasury]
+                    Q --> R
+                    R --> S[Transfer ORE from Treasury<br>to Liquidator ORE Account]
+                    S --> T[Update User Position:<br>Decrease Borrow and Collateral Amount]
+                    T --> U([Complete])
+
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style D fill:#f99,stroke:#333,stroke-width:2px
+                    style I fill:#f99,stroke:#333,stroke-width:2px
+                    style K fill:#f99,stroke:#333,stroke-width:2px
+                    style M fill:#f99,stroke:#333,stroke-width:2px
+                    style U fill:#9f9,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+        <div class="key-points">
+            <h4>Key Points of Liquidating Position</h4>
+            <ul>
+                <li>Positions can only be liquidated when the loan amount to collateral value ratio exceeds the liquidation threshold (80%)</li>
+                <li>Liquidation amount cannot exceed the total borrow amount of the liquidated user</li>
+                <li>Liquidators receive collateral equivalent to the liquidation amount plus a 5% reward</li>
+                <li>Liquidation operation requires the signature authorization of the lending pool PDA</li>
+                <li>After liquidation, the borrow and collateral amounts of the liquidated user will be reduced accordingly</li>
+                <li>The liquidation process involves the transfer of both USDC and ORE tokens</li>
+                <li>This mechanism protects the protocol from bad debts</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="boost">
+        <h2>ORE Boost Staking (stake_to_boost)</h2>
+        <div class="function-description">
+            <p>The protocol stakes the ORE collateral deposited by users into the ORE Boost pool to earn approximately 8% annualized returns. These staking returns belong to the protocol as one of its revenue sources. The staking process is automatically conducted in the background, without affecting the user's borrowing functionality on the collateral.</p>
+        </div>
+        <div class="diagram-container">
+            <div class="mermaid">
+                flowchart TD
+                    A([Start]) --> B[Monitor ORE Treasury<br>Detect New Deposited Collateral]
+                    B --> C{Is There New<br>ORE Collateral?}
+                    C -->|No| B
+                    C -->|Yes| D[Calculate Stakable Amount:<br>total = Current Collateral - Already Staked Amount]
+                    D --> E{Stakable Amount > 0?}
+                    E -->|No| B
+                    E -->|Yes| F[Prepare Boost Pool<br>Staking Transaction]
+                    F --> G[Transfer Tokens from ORE Treasury<br>to Boost Pool]
+                    G --> H[Update Staking Record]
+                    H --> I[Periodically Check<br>Staking Returns]
+                    I --> J{Are There New<br>Staking Returns?}
+                    J -->|No| I
+                    J -->|Yes| K[Collect Staking Returns]
+                    K --> L[Transfer Returns to<br>Protocol Revenue Account]
+                    L --> M[Update Protocol<br>Revenue Record]
+                    M --> I
+
+                    style A fill:#f9f,stroke:#333,stroke-width:2px
+                    style B fill:#bbf,stroke:#333,stroke-width:2px
+                    style I fill:#bbf,stroke:#333,stroke-width:2px
+                    style K fill:#9f9,stroke:#333,stroke-width:2px
+                    style L fill:#9f9,stroke:#333,stroke-width:2px
+            </div>
+        </div>
+        <div class="key-points">
+            <h4>Key Points of ORE Boost Staking</h4>
+            <ul>
+                <li>The protocol automatically manages the staking process, completely transparent to users</li>
+                <li>All deposited ORE collateral is automatically staked into the Boost pool</li>
+                <li>Staking generates approximately 8% annualized returns as protocol revenue</li>
+                <li>Staking does not affect the user's borrowing functionality on the collateral</li>
+                <li>Collateral is automatically unstaked from the Boost pool when withdrawn</li>
+                <li>Staking returns are used for protocol operation and development</li>
+                <li>The principal of the collateral deposited by users remains unchanged</li>
+            </ul>
+        </div>
+        <div class="info-container">
+            <div class="key-points">
+                <h4>Involved Accounts</h4>
+                <ul>
+                    <li>Lending Pool Account (PDA)</li>
+                    <li>ORE Treasury Account</li>
+                    <li>Boost Pool Staking Account</li>
+                    <li>Staking Record Account</li>
+                    <li>Protocol Revenue Account</li>
+                </ul>
+            </div>
+            <div class="key-points">
+                <h4>Revenue Handling</h4>
+                <ul>
+                    <li>All staking returns belong to the protocol</li>
+                    <li>Returns are directly transferred to the protocol revenue account</li>
+                    <li>Returns are used for protocol maintenance and development</li>
+                    <li>The revenue distribution process is transparent and verifiable</li>
+                    <li>Does not affect the value of the user's collateral</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-top">↑</div>
+
+    <footer>
+        <p>TrueStable &copy; 2025</p>
+    </footer>
+
+    <script>
+        // 初始化 Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                curve: 'basis'
+            }
+        });
+
+        // 添加滚动到顶部功能
+        const scrollTop = document.querySelector('.scroll-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

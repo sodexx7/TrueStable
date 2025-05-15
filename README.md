@@ -55,3 +55,11 @@ By integrating with TrueStable Finance, protocols can enhance their ecosystem. T
 2.Strengthen risk management to handle extreme market conditions and safeguard the interests of all participants.
 
 3.Enhance the security of the smart contracts and improve the overall user experience.
+
+4.Implement contract invocation functionality in the frontend.
+
+## Smart Contract Information
+
+Network: devnet
+Programm address: CZVdyKQKuK3peBnfWtqXWF2AM6MKK2qneNhZuB6UMive
+Program functional flowchart: Solana/Contracts/truestable-contract/truestable_flowcharts-en.html
